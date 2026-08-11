@@ -3,184 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creating Your Best Life — Vivian Oberfeld, LMFT</title>
-<meta name="description" content="Creating Your Best Life — group work with Vivian Oberfeld, LMFT. A small, thoughtfully formed group for adults in their late 20s and 30s navigating life's most consequential d">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Creating Your Best Life — Vivian Oberfeld, MFT</title>
 <style>
-  :root{
-    --paper:#F3EEE6;--paper-2:#EAE1D3;--ink:#2A2621;--ink-soft:#5C554B;
-    --pine:#233833;--pine-soft:#4E6B62;--gold:#B08A56;--line:#D8CDBB;
-    --ease:cubic-bezier(.2,.65,.3,1);
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;background:var(--paper);color:var(--ink);
-    font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:16.5px;line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:400;line-height:1.15;letter-spacing:-.01em;margin:0;}
-  p{margin:0 0 1.1em;}
-  a{color:inherit;}
-  .wrap{max-width:640px;margin:0 auto;padding:0 24px;}
-
-  /* Header — same wordmark + return-home behaviour as the main site */
-  header{position:sticky;top:0;z-index:20;background:rgba(243,238,230,.92);
-    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-  .nav{max-width:960px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;}
-  .brand{font-family:"Source Serif 4",serif;font-size:19px;text-decoration:none;color:var(--ink);}
-  .brand:hover{opacity:.72;}
-  .back{font-size:14px;text-decoration:none;color:var(--pine-soft);letter-spacing:.01em;display:inline-flex;align-items:center;gap:7px;}
-  .back:hover{color:var(--ink);}
-  .back svg{transition:transform .2s ease;}
-  .back:hover svg{transform:translateX(-3px);}
-
-  main{padding:52px 0 30px;}
-  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--pine-soft);
-    display:inline-flex;align-items:center;gap:11px;margin-bottom:16px;}
-  .eyebrow::before{content:"";width:24px;height:1px;background:var(--gold);}
-  .badge{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-    background:#efe4cf;color:#8a6a34;border:1px solid #e0cfa9;border-radius:20px;padding:4px 13px;margin-bottom:16px;}
-  h1{font-size:clamp(30px,5vw,40px);margin-bottom:16px;}
-  .intro{font-size:16.5px;color:var(--ink-soft);margin-bottom:30px;}
-
-  .details{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:32px;}
-  .detail{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:13px 16px;}
-  .detail .k{font-size:10.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--pine-soft);margin-bottom:5px;}
-  .detail .v{font-size:14px;color:var(--ink);font-weight:500;line-height:1.45;}
-  .detail .v small{display:block;font-weight:400;font-size:12px;color:var(--ink-soft);margin-top:3px;}
-
-  .divider{height:1px;background:var(--line);border:0;margin:0 0 30px;}
-
-  .field{margin-bottom:20px;}
-  label{font-size:14px;font-weight:500;color:var(--ink);display:block;margin-bottom:8px;}
-  label .opt{font-weight:400;color:var(--ink-soft);font-size:12.5px;margin-left:5px;}
-  .req{color:#b0503f;margin-left:2px;}
-  input,textarea,select{width:100%;font-family:inherit;font-size:15px;color:var(--ink);background:#fbf9f5;
-    border:1px solid var(--line);border-radius:5px;padding:12px 13px;outline:none;transition:border-color .15s,box-shadow .15s;appearance:none;}
-  input::placeholder,textarea::placeholder{color:#a99f8d;}
-  input:focus,textarea:focus,select:focus{border-color:var(--pine-soft);box-shadow:0 0 0 3px rgba(78,107,98,.12);}
-  textarea{height:104px;resize:vertical;}
-  select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234E6B62' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
-  .hint{font-size:12.5px;color:var(--ink-soft);margin-top:6px;line-height:1.5;}
-
-  .btn{width:100%;padding:15px;font-family:inherit;font-size:15px;font-weight:500;letter-spacing:.02em;
-    background:var(--pine);color:var(--paper);border:none;border-radius:3px;cursor:pointer;margin-top:6px;
-    transition:background .25s ease,transform .2s ease;}
-  .btn:hover{background:#182b26;transform:translateY(-1px);}
-  .privacy{font-size:12.5px;color:var(--ink-soft);text-align:center;margin:14px 0 0;line-height:1.6;}
-
-  .confirmation{display:none;text-align:center;padding:44px 8px;}
-  .confirmation .mark{width:52px;height:52px;margin:0 auto 20px;border-radius:50%;border:1px solid var(--gold);
-    display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:22px;}
-  .confirmation h2{font-size:24px;margin-bottom:12px;}
-  .confirmation p{font-size:15.5px;color:var(--ink-soft);max-width:30em;margin:0 auto 24px;}
-  .cal-btn{display:inline-block;padding:12px 26px;font-size:14px;font-weight:500;text-decoration:none;
-    border:1px solid var(--pine);border-radius:3px;color:var(--pine);background:transparent;transition:background .2s,color .2s;}
-  .cal-btn:hover{background:var(--pine);color:var(--paper);}
-
-  footer{border-top:1px solid var(--line);margin-top:40px;}
-  .foot{max-width:640px;margin:0 auto;padding:34px 24px 46px;}
-  .foot .lbl{font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--pine-soft);margin-bottom:16px;}
-  .foot-groups{display:grid;gap:10px;}
-  .foot-groups a{font-family:"Source Serif 4",serif;font-size:17px;text-decoration:none;color:var(--ink);
-    display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);transition:color .2s;}
-  .foot-groups a:hover{color:var(--pine-soft);}
-  .foot-groups a[aria-current]{color:var(--pine-soft);opacity:.55;pointer-events:none;}
-  .foot-groups a span{font-family:"Hanken Grotesk",sans-serif;font-size:20px;color:var(--gold);}
-  .foot-home{margin-top:22px;font-size:14px;}
-  .foot-home a{color:var(--pine-soft);text-decoration:none;border-bottom:1px solid rgba(176,138,86,.5);padding-bottom:2px;}
-
-  :focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3px;}
-  @media (max-width:560px){ .details{grid-template-columns:1fr;} main{padding:38px 0 20px;} }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Georgia, serif; background: #F0EDE6; color: #1a1a1a; padding: 2rem 1rem; }
+  .container { max-width: 620px; margin: 0 auto; }
+  .page-label { font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: #A08060; margin-bottom: 6px; }
+  .page-title { font-size: 26px; font-weight: 500; color: #1a1a1a; margin-bottom: 10px; line-height: 1.25; }
+  .page-intro { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 1.75rem; }
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1.75rem; }
+  .detail-item { background: #fff; border: 1px solid #E0D8CF; border-radius: 8px; padding: 10px 14px; }
+  .detail-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #A08060; margin-bottom: 4px; }
+  .detail-value { font-size: 13.5px; color: #1a1a1a; font-weight: 500; line-height: 1.45; }
+  .divider { height: 1px; background: #E0D8CF; margin: 0 0 1.75rem; }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-label { font-size: 13px; font-weight: 500; color: #1a1a1a; display: block; margin-bottom: 7px; }
+  .optional { font-weight: 400; color: #888; font-size: 12px; margin-left: 4px; }
+  .required-star { color: #C0392B; margin-left: 2px; }
+  input[type=text], input[type=email], input[type=tel], textarea, select { width: 100%; font-size: 14px; font-family: inherit; color: #1a1a1a; background: #fff; border: 1px solid #C9B49A; border-radius: 6px; padding: 10px 12px; outline: none; transition: border-color 0.15s; appearance: none; }
+  input:focus, textarea:focus, select:focus { border-color: #7A5C3E; }
+  textarea { height: 95px; resize: vertical; }
+  .form-hint { font-size: 12px; color: #888; margin-top: 5px; line-height: 1.5; }
+  .submit-btn { width: 100%; padding: 13px; font-size: 15px; font-weight: 500; font-family: inherit; background: #7A5C3E; color: #fff; border: none; border-radius: 6px; cursor: pointer; margin-top: 0.5rem; transition: opacity 0.15s; }
+  .submit-btn:hover { opacity: 0.85; }
+  .privacy-note { font-size: 12px; color: #888; text-align: center; margin-top: 1rem; line-height: 1.6; }
+  #confirmation { display: none; text-align: center; padding: 4rem 1rem; }
+  .confirmation-icon { font-size: 40px; margin-bottom: 1.25rem; }
+  .confirmation-title { font-size: 24px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.75rem; }
+  .confirmation-text { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .calendly-btn { display: inline-block; padding: 13px 30px; font-size: 15px; font-weight: 500; font-family: inherit; border: 1px solid #7A5C3E; border-radius: 6px; color: #7A5C3E; background: transparent; text-decoration: none; transition: all 0.15s; }
+  .calendly-btn:hover { background: #7A5C3E; color: #fff; }
 </style>
 </head>
 <body>
+<div class="container">
 
-<header>
-  <div class="nav">
-    <a class="brand" href="index.html">Vivian Oberfeld, LMFT</a>
-  </div>
-</header>
-
-<main class="wrap">
-  <div id="form-view">
-    <span class="eyebrow">Group Work · Waitlist</span>
-    <h1>Creating Your Best Life</h1>
-    <p class="intro">A small, thoughtfully formed group for adults in their late 20s and 30s navigating life's most consequential decisions — who to commit to, where to plant roots, whether the career you chose still fits, and the shifting terrain of family relationships. Join the waitlist below and I'll be in touch when the next cohort is forming.</p>
-
-    <div class="details">
-        <div class="detail"><div class="k">Format</div><div class="v">8-week cohort</div></div>
-        <div class="detail"><div class="k">Location</div><div class="v">Beverly Hills or online</div></div>
-        <div class="detail"><div class="k">Group Size</div><div class="v">Up to 10 participants</div></div>
-        <div class="detail"><div class="k">Schedule</div><div class="v">To be announced</div></div>
+  <div id="form-section">
+    <div class="page-label">Group Work · Waitlist</div>
+    <div class="page-title">Creating Your Best Life</div>
+    <div class="page-intro">A small, thoughtfully formed group for adults in their late twenties and thirties navigating life's most consequential decisions — career, relationships, identity, and the uncertainty that surrounds all of it. Join the waitlist below and I'll be in touch when the next cohort is forming.</div>
+    <div class="detail-grid">
+      <div class="detail-item"><div class="detail-label">Format</div><div class="detail-value">8-week cohort</div></div>
+      <div class="detail-item"><div class="detail-label">Location</div><div class="detail-value">Beverly Hills or online</div></div>
+      <div class="detail-item"><div class="detail-label">Group Size</div><div class="detail-value">Up to 10 participants</div></div>
+      <div class="detail-item"><div class="detail-label">Schedule</div><div class="detail-value">To be announced</div></div>
     </div>
-
-    <hr class="divider">
-
-    <form id="signup" novalidate>
-      <div class="field">
-        <label for="name">Full name <span class="req">*</span></label>
-        <input type="text" id="name" name="name" placeholder="" required />
-      </div>
-      <div class="field">
-        <label for="email">Email address <span class="req">*</span></label>
-        <input type="email" id="email" name="email" placeholder="your@email.com" required />
-      </div>
-      <div class="field">
-        <label for="phone">Phone number <span class="req">*</span></label>
-        <input type="tel" id="phone" name="phone" placeholder="(310) 000-0000" required />
-      </div>
-      <div class="field">
-        <label for="format">Do you prefer in-person or online? <span class="req">*</span></label>
-        <select id="format" name="format" required>
-          <option value="">Select one</option>
-          <option value="inperson">In-person · Beverly Hills</option>
-          <option value="online">Online</option>
-          <option value="nopref">No preference</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="notes">Anything you'd like me to know as I put together this cohort? <span class="opt">(optional)</span></label>
-        <textarea id="notes" name="notes" placeholder="Share as little or as much as feels right…"></textarea>
-        <p class="hint">This helps me thoughtfully consider fit as I form the group.</p>
-      </div>
-      <button class="btn" type="submit">Join the waitlist</button>
-      <p class="privacy">Your information is kept strictly confidential and will only be used to follow up about this group.</p>
-    </form>
-  </div>
-</main>
-
-<footer>
-  <div class="foot">
-    <div class="lbl">Explore other groups</div>
-    <div class="foot-groups">
-        <a href="women-midlife-awakening.html">Women's Midlife Awakening<span>›</span></a>
-        <a href="men-at-midlife.html">Men at Midlife<span>›</span></a>
-        <a href="creating-your-best-life.html" aria-current="page">Creating Your Best Life<span>›</span></a>
+    <div class="divider"></div>
+    <div class="form-group">
+      <label class="form-label" for="t-name">Full name <span class="required-star">*</span></label>
+      <input type="text" id="t-name" placeholder="Your name" />
     </div>
-    <div class="foot-home"><a href="index.html">← Back to the main site</a></div>
+    <div class="form-group">
+      <label class="form-label" for="t-email">Email address <span class="required-star">*</span></label>
+      <input type="email" id="t-email" placeholder="your@email.com" />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="t-phone">Phone number <span class="required-star">*</span></label>
+      <input type="tel" id="t-phone" placeholder="(310) 000-0000" />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="t-format">Do you prefer in-person or online? <span class="required-star">*</span></label>
+      <select id="t-format">
+        <option value="">Select one</option>
+        <option value="inperson">In-person · Beverly Hills</option>
+        <option value="online">Online</option>
+        <option value="nopref">No preference</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="t-notes">Anything you'd like me to know as I put together this cohort? <span class="optional">(optional)</span></label>
+      <textarea id="t-notes" placeholder="Share as little or as much as feels right…"></textarea>
+      <div class="form-hint">This helps me thoughtfully consider fit as I form the group.</div>
+    </div>
+    <button class="submit-btn" onclick="submitForm()">Join the waitlist</button>
+    <div class="privacy-note">Your information is kept strictly confidential and will only be used to follow up about this group.</div>
   </div>
-</footer>
 
+  <div id="confirmation">
+    <div class="confirmation-icon">✦</div>
+    <div class="confirmation-title">Thank you — I'll be in touch soon.</div>
+    <div class="confirmation-text">I've received your information and will reach out within one business day to schedule a brief introductory call. In the meantime, if you'd like to book that call directly, you're welcome to do so below.</div>
+    <a class="calendly-btn" href="https://calendly.com/voberfeldmft/introductory-call-with-vivian-oberfeld-mft" target="_blank">Schedule your introductory call</a>
+  </div>
+
+</div>
 <script>
-  // On submit: validate, then send the person to Vivian's Calendly booking page,
-  // pre-filling their name and email so they don't have to retype them.
-  var CALENDLY = "https://calendly.com/voberfeldmft/introductory-call-with-vivian-oberfeld-mft?month=2026-08";
-  var form = document.getElementById('signup');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!form.checkValidity()) { form.reportValidity(); return; }
-    var nameEl  = document.getElementById('name');
-    var emailEl = document.getElementById('email');
-    var url = CALENDLY
-      + '&name='  + encodeURIComponent(nameEl  ? nameEl.value.trim()  : '')
-      + '&email=' + encodeURIComponent(emailEl ? emailEl.value.trim() : '');
-    window.location.href = url;
-  });
+async function submitForm() {
+  const name = document.getElementById('t-name').value.trim();
+  const email = document.getElementById('t-email').value.trim();
+  const phone = document.getElementById('t-phone').value.trim();
+  const format = document.getElementById('t-format').value;
+  if (!name || !email || !phone || !format) {
+    alert('Please complete all required fields to continue.');
+    return;
+  }
+  const data = {
+    name, email, phone,
+    preference: format,
+    notes: document.getElementById('t-notes').value,
+    _subject: "Creating Your Best Life — Waitlist"
+  };
+  try {
+    const res = await fetch('https://formspree.io/f/mnpapvqz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (res.ok) {
+      document.getElementById('form-section').style.display = 'none';
+      document.getElementById('confirmation').style.display = 'block';
+      window.scrollTo(0, 0);
+    } else {
+      alert('Something went wrong. Please try again or email voberfeldmft@yahoo.com directly.');
+    }
+  } catch(e) {
+    alert('Something went wrong. Please try again or email voberfeldmft@yahoo.com directly.');
+  }
+}
 </script>
 </body>
 </html>
