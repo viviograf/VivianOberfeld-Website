@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Measure of a Man — Vivian Oberfeld, MFT</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Georgia, serif; background: #F0EDE6; color: #1a1a1a; padding: 2rem 1rem; }
+  .container { max-width: 620px; margin: 0 auto; }
+  .page-label { font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: #A08060; margin-bottom: 6px; }
+  .page-title { font-size: 26px; font-weight: 500; color: #1a1a1a; margin-bottom: 10px; line-height: 1.25; }
+  .page-intro { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 1.75rem; }
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1.75rem; }
+  .detail-item { background: #fff; border: 1px solid #E0D8CF; border-radius: 8px; padding: 10px 14px; }
+  .detail-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #A08060; margin-bottom: 4px; }
+  .detail-value { font-size: 13.5px; color: #1a1a1a; font-weight: 500; line-height: 1.45; }
+  .divider { height: 1px; background: #E0D8CF; margin: 0 0 1.75rem; }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-label { font-size: 13px; font-weight: 500; color: #1a1a1a; display: block; margin-bottom: 7px; }
+  .optional { font-weight: 400; color: #888; font-size: 12px; margin-left: 4px; }
+  .required-star { color: #C0392B; margin-left: 2px; }
+  input[type=text], input[type=email], input[type=tel], textarea, select { width: 100%; font-size: 14px; font-family: inherit; color: #1a1a1a; background: #fff; border: 1px solid #C9B49A; border-radius: 6px; padding: 10px 12px; outline: none; transition: border-color 0.15s; appearance: none; }
+  input:focus, textarea:focus, select:focus { border-color: #7A5C3E; }
+  textarea { height: 95px; resize: vertical; }
+  .form-hint { font-size: 12px; color: #888; margin-top: 5px; line-height: 1.5; }
+  .submit-btn { width: 100%; padding: 13px; font-size: 15px; font-weight: 500; font-family: inherit; background: #7A5C3E; color: #fff; border: none; border-radius: 6px; cursor: pointer; margin-top: 0.5rem; transition: opacity 0.15s; }
+  .submit-btn:hover { opacity: 0.85; }
+  .privacy-note { font-size: 12px; color: #888; text-align: center; margin-top: 1rem; line-height: 1.6; }
+  #confirmation { display: none; text-align: center; padding: 4rem 1rem; }
+  .confirmation-icon { font-size: 40px; margin-bottom: 1.25rem; }
+  .confirmation-title { font-size: 24px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.75rem; }
+  .confirmation-text { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .calendly-btn { display: inline-block; padding: 13px 30px; font-size: 15px; font-weight: 500; font-family: inherit; border: 1px solid #7A5C3E; border-radius: 6px; color: #7A5C3E; background: transparent; text-decoration: none; transition: all 0.15s; }
+  .calendly-btn:hover { background: #7A5C3E; color: #fff; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div id="form-section">
+    <div class="page-label">Group Work · Waitlist</div>
+    <div class="page-title">The Measure of a Man</div>
+    <div class="page-intro">A rare opportunity for men to examine the questions of identity, achievement, and purpose — in a setting that is honest, confidential, and surprisingly powerful. Join the waitlist below and I'll be in touch when the next cohort is forming.</div>
+    <div class="detail-grid">
+      <div class="detail-item"><div class="detail-label">Format</div><div class="detail-value">8-week cohort</div></div>
+      <div class="detail-item"><div class="detail-label">Location</div><div class="detail-value">Beverly Hills or online</div></div>
+      <div class="detail-item"><div class="detail-label">Group Size</div><div class="detail-value">Up to 10 participants</div></div>
+      <div class="detail-item"><div class="detail-label">Schedule</div><div class="detail-value">To be announced</div></div>
+    </div>
+    <div class="divider"></div>
+    <div class="form-group">
+      <label class="form-label" for="m-name">Full name <span class="required-star">*</span></label>
+      <input type="text" id="m-name" placeholder="Your name" />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="m-email">Email address <span class="required-star">*</span></label>
+      <input type="email" id="m-email" placeholder="your@email.com" />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="m-phone">Phone number <span class="required-star">*</span></label>
+      <input type="tel" id="m-phone" placeholder="(310) 000-0000" />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="m-format">Do you prefer in-person or online? <span class="required-star">*</span></label>
+      <select id="m-format">
+        <option value="">Select one</option>
+        <option value="inperson">In-person · Beverly Hills</option>
+        <option value="online">Online</option>
+        <option value="nopref">No preference</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="m-notes">Anything you'd like me to know as I put together this cohort? <span class="optional">(optional)</span></label>
+      <textarea id="m-notes" placeholder="Share as little or as much as feels right…"></textarea>
+      <div class="form-hint">This helps me thoughtfully consider fit as I form the group.</div>
+    </div>
+    <button class="submit-btn" onclick="submitForm()">Join the waitlist</button>
+    <div class="privacy-note">Your information is kept strictly confidential and will only be used to follow up about this group.</div>
+  </div>
+
+  <div id="confirmation">
+    <div class="confirmation-icon">✦</div>
+    <div class="confirmation-title">Thank you — I'll be in touch soon.</div>
+    <div class="confirmation-text">I've received your information and will reach out within one business day to schedule a brief introductory call. In the meantime, if you'd like to book that call directly, you're welcome to do so below.</div>
+    <a class="calendly-btn" href="https://calendly.com/voberfeldmft/introductory-call-with-vivian-oberfeld-mft" target="_blank">Schedule your introductory call</a>
+  </div>
+
+</div>
+<script>
+async function submitForm() {
+  const name = document.getElementById('m-name').value.trim();
+  const email = document.getElementById('m-email').value.trim();
+  const phone = document.getElementById('m-phone').value.trim();
+  const format = document.getElementById('m-format').value;
+  if (!name || !email || !phone || !format) {
+    alert('Please complete all required fields to continue.');
+    return;
+  }
+  const data = {
+    name, email, phone,
+    preference: format,
+    notes: document.getElementById('m-notes').value,
+    _subject: "The Measure of a Man — Waitlist"
+  };
+  try {
+    const res = await fetch('https://formspree.io/f/mnpapvqz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (res.ok) {
+      document.getElementById('form-section').style.display = 'none';
+      document.getElementById('confirmation').style.display = 'block';
+      window.scrollTo(0, 0);
+    } else {
+      alert('Something went wrong. Please try again or email voberfeldmft@yahoo.com directly.');
+    }
+  } catch(e) {
+    alert('Something went wrong. Please try again or email voberfeldmft@yahoo.com directly.');
+  }
+}
+</script>
+</body>
+</html>
