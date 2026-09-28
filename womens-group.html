@@ -35,22 +35,20 @@
   .confirmation-text { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
   .calendly-btn { display: inline-block; padding: 13px 30px; font-size: 15px; font-weight: 500; font-family: inherit; border: 1px solid #7A5C3E; border-radius: 6px; color: #7A5C3E; background: transparent; text-decoration: none; transition: all 0.15s; }
   .calendly-btn:hover { background: #7A5C3E; color: #fff; }
-  .urgency { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; background: #FBE9E7; color: #C0392B; border-radius: 20px; padding: 3px 10px; margin-bottom: 1rem; }
 </style>
 </head>
 <body>
 <div class="container">
 
   <div id="form-section">
-    <div class="page-label">Group Work · Reserve Your Spot</div>
-    <div class="urgency">Now forming · September 2026</div>
+    <div class="page-label">Group Work · Waitlist</div>
     <div class="page-title">Women's Midlife Awakening</div>
-    <div class="page-intro">This intimate cohort brings together up to 8 women navigating the questions, shifts, and reckonings of midlife — in a space that is honest, confidential, and deeply supportive. Reserve your spot below and I'll be in touch to schedule a brief call to make sure it's a good fit.</div>
+    <div class="page-intro">This intimate cohort brings together up to 8 women navigating the questions, shifts, and reckonings of midlife — in a space that is honest, confidential, and deeply supportive. Join the waitlist below and I'll be in touch when the next cohort is forming.</div>
     <div class="detail-grid">
-      <div class="detail-item"><div class="detail-label">Dates</div><div class="detail-value">Sept 28 – Nov 16, 2026</div></div>
-      <div class="detail-item"><div class="detail-label">Time</div><div class="detail-value">Mondays, 5:30 – 7:00 PM</div></div>
-      <div class="detail-item"><div class="detail-label">Format</div><div class="detail-value">8 weeks · In-person<br><small>Beverly Hills</small></div></div>
-      <div class="detail-item"><div class="detail-label">Program Fee</div><div class="detail-value">$800 total<small>$200 deposit · $600 before first session</small></div></div>
+      <div class="detail-item"><div class="detail-label">Format</div><div class="detail-value">8-week cohort</div></div>
+      <div class="detail-item"><div class="detail-label">Location</div><div class="detail-value">In-person · Beverly Hills</div></div>
+      <div class="detail-item"><div class="detail-label">Group Size</div><div class="detail-value">Up to 8 participants</div></div>
+      <div class="detail-item"><div class="detail-label">Schedule</div><div class="detail-value">To be announced</div></div>
     </div>
     <div class="divider"></div>
 
@@ -73,16 +71,17 @@
     <div class="form-group">
       <label class="form-label" for="w-message">What's drawing you to this group right now? <span class="optional">(optional)</span></label>
       <textarea id="w-message" placeholder="Share as little or as much as feels right…"></textarea>
-      <div class="form-hint">This helps me understand where you are and make the most of our introductory call.</div>
+      <div class="form-hint">This helps me thoughtfully consider fit as I form the group.</div>
     </div>
-    <button class="submit-btn" onclick="submitForm()">Reserve my spot</button>
+    <button class="submit-btn" onclick="submitForm()">Join the waitlist</button>
     <div class="privacy-note">Your information is kept strictly confidential and will only be used to follow up about this group.</div>
   </div>
 
   <div id="confirmation">
     <div class="confirmation-icon">✦</div>
-    <div class="confirmation-title">Thank you — I'll be in touch soon.</div>
-    <div class="confirmation-text">I've received your information and will reach out within one business day to schedule a brief introductory call. I look forward to connecting.</div>
+    <div class="confirmation-title">You're on the list.</div>
+    <div class="confirmation-text">Thank you for your interest in Women's Midlife Awakening. I'll be in touch personally when the next cohort is forming and spots become available. I look forward to connecting.</div>
+    <a class="calendly-btn" href="https://calendly.com/voberfeldmft/introductory-call-with-vivian-oberfeld-mft" target="_blank">Schedule an introductory call</a>
   </div>
 
 </div>
@@ -99,7 +98,7 @@ async function submitForm() {
     name, email, phone,
     referral: document.getElementById('w-referral').value,
     message: document.getElementById('w-message').value,
-    _subject: "Women's Midlife Awakening — New Reservation"
+    _subject: "Women's Midlife Awakening — Waitlist"
   };
   const btn = document.querySelector('.submit-btn');
   const original = btn.textContent;
